@@ -9,14 +9,26 @@ namespace EmployeeWageComputation
     public class EmployeeWage
     {
         const int IS_PRESENT = 1;
-        public void empAttandence()
+        const int EMP_SAL_PER_HOURS = 40;
+        int empHrs = 0;
+        int empWage = 0;
+        public void empSalary()
         {
             Random random = new Random();
-            int empCheck = random.Next(0, 2);
-            if (empCheck == 1)
-                Console.WriteLine("Employee is Present");
+            int check = random.Next(0, 2);
+            if (check == IS_PRESENT)
+            {
+                empHrs = 8;
+            }
             else
-                Console.WriteLine("Employee is Absent");
+            {
+                empHrs = 0;
+            }
+            empWage = empHrs * EMP_SAL_PER_HOURS;
+            Console.WriteLine("Employee Salary is " + empWage + "rupee");
+
         }
+
+
     }
 }
