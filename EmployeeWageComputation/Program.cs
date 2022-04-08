@@ -6,6 +6,6 @@ using System;
     public static void Main(string[] args)
     { 
     EmployeeWage computation=new EmployeeWage();
-        computation.empSalary();
+        computation.dailyEmpWage();
     }
 }
