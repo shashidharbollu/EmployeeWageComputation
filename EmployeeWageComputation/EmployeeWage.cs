@@ -13,14 +13,26 @@ namespace EmployeeWageComputation
         
 
         //variable values
-        int empHrs = 0;
+         int empHrs = 0;
         int totalEmpSalary = 0;
         int totalEmpHrs = 0;
         int day = 0;
 
-        public int MAX_WORKING_HR { get; private set; }
+        public int MAX_WORKING_HR { get;  set; }
 
-        public void monthlyEmpWage()
+       
+            const int IS_PRESENT = 1;
+            public void empAttandence()
+            {
+                Random random = new Random();
+                int empCheck = random.Next(0, 2);
+                if (empCheck == 1)
+                    Console.WriteLine("Employee is Present");
+                else
+                    Console.WriteLine("Employee is Absent");
+            }
+
+            public void monthlyEmpWage()
         {
             while (day <= EMP_WORKING_PR_MONTH && empHrs <= MAX_WORKING_HR)
             {
@@ -44,6 +56,7 @@ namespace EmployeeWageComputation
                 day++;
 
             }
+
 
             totalEmpSalary = empHrs * EMP_WAGE_PR_HR;
             Console.WriteLine("One month Employee Salary is :" + totalEmpSalary);

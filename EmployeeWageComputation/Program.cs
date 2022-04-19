@@ -7,5 +7,6 @@ using System;
     { 
     EmployeeWage computation=new EmployeeWage();
         computation.monthlyEmpWage();
+        computation.empAttandence();
     }
 }
