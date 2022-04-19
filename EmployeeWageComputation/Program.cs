@@ -6,7 +6,7 @@ using System;
     public static void Main(string[] args)
     { 
     EmployeeWage computation=new EmployeeWage();
-        computation.monthlyEmpWage();
-        computation.empAttandence();
+        computation.monthlyWage("dmart",3,10,15,2);
+        computation.monthlyWage("more", 4,5,6,4);
     }
 }

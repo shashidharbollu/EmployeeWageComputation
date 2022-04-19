@@ -9,59 +9,42 @@ namespace EmployeeWageComputation
     public class EmployeeWage
     {
         //constance value
-        const int PART_TIME_EMP = 1, FULL_TIME_EMP = 2, EMP_WAGE_PR_HR = 20, EMP_FULL_DAY_WRKING_HR = 8, EMP_PART_TIME_WRKING_HR = 4, EMP_WORKING_PR_MONTH = 20;
-        
+        const int PART_TIME_EMP = 1, FULL_TIME_EMP = 2, EMP_FULL_DAY_WRKING_HR = 8, EMP_PART_TIME_WRKING_HR = 4;
+
 
         //variable values
-         int empHrs = 0;
+        int empHrs = 0;
         int totalEmpSalary = 0;
         int totalEmpHrs = 0;
         int day = 0;
 
-        public int MAX_WORKING_HR { get;  set; }
-
-       
-            const int IS_PRESENT = 1;
-            public void empAttandence()
-            {
-                Random random = new Random();
-                int empCheck = random.Next(0, 2);
-                if (empCheck == 1)
-                    Console.WriteLine("Employee is Present");
-                else
-                    Console.WriteLine("Employee is Absent");
-            }
-
-            public void monthlyEmpWage()
+        public void monthlyWage(string company_Name, int emp_Wage_Pr_Hr, int Emp_Working_Hr, int Emp_Working_Days_Pr_Month, int max_Working_Hrs)
         {
-            while (day <= EMP_WORKING_PR_MONTH && empHrs <= MAX_WORKING_HR)
+            while (day <= Emp_Working_Days_Pr_Month && empHrs <= max_Working_Hrs)
             {
                 Random random = new Random();
                 int empCheck = random.Next(0, 3);
 
                 switch (empCheck)
                 {
+
                     case FULL_TIME_EMP:
 
                         empHrs += EMP_FULL_DAY_WRKING_HR;
                         break;
-                    case PART_TIME_EMP:
 
+                    case PART_TIME_EMP:
                         empHrs += EMP_PART_TIME_WRKING_HR;
                         break;
                     default:
                         empHrs = 0;
                         break;
+
                 }
                 day++;
-
             }
-
-
-            totalEmpSalary = empHrs * EMP_WAGE_PR_HR;
-            Console.WriteLine("One month Employee Salary is :" + totalEmpSalary);
+            totalEmpSalary = empHrs * emp_Wage_Pr_Hr;
+            Console.WriteLine("the salary of the employee is : " + totalEmpSalary);
         }
-
-
     }
 }
